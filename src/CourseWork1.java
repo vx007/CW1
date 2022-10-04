@@ -3,20 +3,19 @@ public class CourseWork1 {
 
     public static void main(String[] args) {
         EmployeeBook book = new EmployeeBook(10);
-        int id = 10;
-        book.add(new Employee("Иванов Иван Иванович", 3, 10_000.0, ++id));
-        book.add(new Employee("Сидоров Пётр Петрович", 1, 5_000.0, ++id));
-        book.add(new Employee("Петров Алексей Петрович", 2, 90_000.0, ++id));
-        book.add(new Employee("Иванов Иван Алексеевич", 3, 70_000.0, ++id));
-        book.add(new Employee("Васильев Алексей Иванович", 4, 30_000.0, ++id));
-        book.add(new Employee("Иванов Тимофей Денисович", 5, 80_000.0, ++id));
+        book.add(new Employee("Иванов Иван Иванович", 3, 10_000.0));
+        book.add(new Employee("Сидоров Пётр Петрович", 1, 5_000.0));
+        book.add(new Employee("Петров Алексей Петрович", 2, 90_000.0));
+        book.add(new Employee("Иванов Иван Алексеевич", 3, 70_000.0));
+        book.add(new Employee("Васильев Алексей Иванович", 4, 30_000.0));
+        book.add(new Employee("Иванов Тимофей Денисович", 5, 80_000.0));
 
         System.out.println("Печатаем всех...");
         book.print();
         printSeparator();
 
         System.out.println("Удаляем сотрудника...");
-        book.delete(13);
+        book.delete(3);
         book.print();
         printSeparator();
 

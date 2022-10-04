@@ -4,13 +4,14 @@ public class Employee {
     private String fullName;
     private Integer department;
     private Double salary;
-    public Integer id;
+    private final Integer id;
+    private static Integer counter = 0;
 
-    public Employee(String fullName, Integer department, Double salary, Integer id) {
+    public Employee(String fullName, Integer department, Double salary) {
         this.fullName = fullName;
         this.department = department;
         this.salary = salary;
-        this.id = id;
+        this.id = ++counter;
     }
 
     public String getFullName() {
@@ -52,11 +53,11 @@ public class Employee {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Employee employee = (Employee) o;
-        return Objects.equals(fullName, employee.fullName) && Objects.equals(department, employee.department);
+        return fullName.equals(employee.fullName) && department.equals(employee.department) && salary.equals(employee.salary) && id.equals(employee.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(fullName, department);
+        return Objects.hash(fullName, department, salary, id);
     }
 }
